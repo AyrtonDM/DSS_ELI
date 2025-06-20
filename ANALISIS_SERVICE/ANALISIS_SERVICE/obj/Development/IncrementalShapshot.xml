@@ -1,0 +1,103 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>ANALISIS_SERVICE</Database>
+    <Server>Ayrton-Laptop\MSSQLSERVER3</Server>
+    <ConnectionString>Data Source=Ayrton-Laptop\MSSQLSERVER3;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>0JYF/p3FhHtnkV83wqOlYwBDfdU=18/06/2025 03:27:04 p. m.18/06/2025 03:27:04 p. m.</TimeStamp>
+        <ID>
+          <String>Erp DM</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>nO6l1fgoxWjXKUn/4seTzQ1Ox5o=18/06/2025 03:36:46 p. m.18/06/2025 03:30:33 p. m.</TimeStamp>
+        <ID>
+          <String>CAJA_CHICA</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>m/U/uzdb70T9/ISlOGvuDC7x4+M=18/06/2025 04:07:34 p. m.18/06/2025 03:49:37 p. m.</TimeStamp>
+        <ID>
+          <String>INVENTARIO</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>+QpiYjdwcw2uqG0uWZCENz+R88g=18/06/2025 03:44:44 p. m.18/06/2025 03:36:46 p. m.</TimeStamp>
+        <ID>
+          <String>Dim Turno</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>pqxYfodS/yJUMU53FyJePSSEHQI=18/06/2025 03:44:44 p. m.18/06/2025 03:36:46 p. m.</TimeStamp>
+        <ID>
+          <String>Dim Fecha</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>KO51nm/kPIVSiZEJLB0pH82aW30=18/06/2025 03:55:19 p. m.18/06/2025 03:51:07 p. m.</TimeStamp>
+        <ID>
+          <String>Dim Articulo</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>u8EO+eMvji4hfVy4yLrQnF4s0RA=18/06/2025 03:51:07 p. m.18/06/2025 03:51:07 p. m.</TimeStamp>
+        <ID>
+          <String>Dim Fecha 1</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>hgRxbtahjg0VZ5xudpfUg1vvJjg=18/06/2025 03:51:07 p. m.18/06/2025 03:51:07 p. m.</TimeStamp>
+        <ID>
+          <String>Dim Almacen</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>IA34t4g9nULbQtgFHt7xtK9EoAg=18/06/2025 03:44:44 p. m.18/06/2025 03:36:46 p. m.iHsHhCGcfbSxFGsISTM5elrdSZE=18/06/2025 03:36:46 p. m.18/06/2025 03:36:46 p. m.</TimeStamp>
+        <ID>
+          <String>CAJA_CHICA</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>BYnj/b0tGlDz6mXw8CmXdJTIHKE=18/06/2025 04:11:09 p. m.18/06/2025 03:51:07 p. m.H8ERvro+qU3fXnlZkIfQs0L+TBM=18/06/2025 03:51:07 p. m.18/06/2025 03:51:07 p. m.</TimeStamp>
+        <ID>
+          <String>INVENTARIO</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>gfff3BpXovN0AgQR8WsVfH0V2rQ=18/06/2025 03:24:00 p. m.18/06/2025 03:23:59 p. m.</TimeStamp>
+      <ID>
+        <String>ANALISIS_SERVICE</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2025-06-18T20:11:21.373333Z</LastDeployed>
+</DeploymentSnapshot>

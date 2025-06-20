@@ -1,0 +1,89 @@
+-- Nuevo project, integration service project
+
+-- ir a "administrador de conexiones" y agregar origen y destino.
+-- agregar un "data flow task" a "flujo de control"
+-- entrar a "data flow task" y agregar "Origen ADO NET" y "Destino ADO NET"
+-- seleccionar erp en origen
+-- Generar consulta en "Origen ADO NET" 
+EJ:
+SELECT        db_erp_sige.categoria.codigo AS idCategoria, db_erp_sige.categoria.nombre
+FROM            db_erp_sige.categoria LEFT OUTER JOIN
+                         erpDM.dbo.dimCategoria ON db_erp_sige.categoria.codigo = erpDM.dbo.dimCategoria.idCategoria
+WHERE        (erpDM.dbo.dimCategoria.idCategoria IS NULL)
+
+-- seleccionar erpDM en destino
+IIF(
+    [Measures].[Sub Total] = 0,
+    NULL,
+    ([Measures].[Ganancia Bruta] / [Measures].[Sub Total]) * 100
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+tiempo promedio de retraso, cantidad de falta de empleados
+
+TURNO
+nombre
+
+CARGO
+nombre
+
+TIEMPO
+anio
+mes
+
+SUCURSAL O REGIONAL
+
+
+EMPLEADO
+nombre
+estado
+sexo
+
+MARCA ASISTENCIA
+hora entrada
+hora salida
+
+HORARIO TURNO
+hora entrada
+hora salida
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
