@@ -12,43 +12,27 @@
     </DataSources>
     <Dimensions>
       <Dimension>
+        <ID>Dim Unidad Negocio</ID>
+      </Dimension>
+      <Dimension>
         <ID>Dim Turno</ID>
       </Dimension>
       <Dimension>
         <ID>Dim Fecha</ID>
       </Dimension>
       <Dimension>
-        <ID>Dim Articulo</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Dim Fecha 1</ID>
-      </Dimension>
-      <Dimension>
-        <ID>Dim Almacen</ID>
+        <ID>Dim Empleado</ID>
       </Dimension>
     </Dimensions>
     <Cubes>
       <Cube>
-        <ID>CAJA_CHICA</ID>
+        <ID>ASISTENCIA</ID>
         <MeasureGroups>
           <MeasureGroup>
-            <ID>Fact Caja</ID>
+            <ID>Fact Asistencia</ID>
             <Partitions>
               <Partition>
-                <ID>Fact Caja</ID>
-              </Partition>
-            </Partitions>
-          </MeasureGroup>
-        </MeasureGroups>
-      </Cube>
-      <Cube>
-        <ID>INVENTARIO</ID>
-        <MeasureGroups>
-          <MeasureGroup>
-            <ID>Fact Inventario</ID>
-            <Partitions>
-              <Partition>
-                <ID>Fact Inventario</ID>
+                <ID>Fact Asistencia</ID>
               </Partition>
             </Partitions>
           </MeasureGroup>

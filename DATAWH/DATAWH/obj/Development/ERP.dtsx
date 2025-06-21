@@ -11,8 +11,8 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="ERP"
   DTS:PackageType="5"
-  DTS:VersionBuild="190"
-  DTS:VersionGUID="{ACDF4EC2-17CB-4F84-BC9D-9E17A27B4508}">
+  DTS:VersionBuild="195"
+  DTS:VersionGUID="{E66FC86B-1F31-4D69-BEA7-28C4FC5E433D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -4933,12 +4933,6 @@ WHERE  (erpDM.dbo.dimUnidad.idUnidad IS NULL)</property>
                       externalMetadataColumnId="Package\DimensionesPrincipales\dimEmpleado.Inputs[Entrada de destino de ADO NET].ExternalColumns[idCargoEmpleado]"
                       lineageId="Package\DimensionesPrincipales\Leer Empleado.Outputs[Salida de origen de ADO NET].Columns[idCargoEmpleado]" />
                     <inputColumn
-                      refId="Package\DimensionesPrincipales\dimEmpleado.Inputs[Entrada de destino de ADO NET].Columns[idEstadoCivil]"
-                      cachedDataType="i4"
-                      cachedName="idEstadoCivil"
-                      externalMetadataColumnId="Package\DimensionesPrincipales\dimEmpleado.Inputs[Entrada de destino de ADO NET].ExternalColumns[idEstadoCivil]"
-                      lineageId="Package\DimensionesPrincipales\Leer Empleado.Outputs[Salida de origen de ADO NET].Columns[idEstadoCivil]" />
-                    <inputColumn
                       refId="Package\DimensionesPrincipales\dimEmpleado.Inputs[Entrada de destino de ADO NET].Columns[idTipoNomina]"
                       cachedDataType="i4"
                       cachedName="idTipoNomina"
@@ -4975,10 +4969,6 @@ WHERE  (erpDM.dbo.dimUnidad.idUnidad IS NULL)</property>
                       refId="Package\DimensionesPrincipales\dimEmpleado.Inputs[Entrada de destino de ADO NET].ExternalColumns[idCargoEmpleado]"
                       dataType="i4"
                       name="idCargoEmpleado" />
-                    <externalMetadataColumn
-                      refId="Package\DimensionesPrincipales\dimEmpleado.Inputs[Entrada de destino de ADO NET].ExternalColumns[idEstadoCivil]"
-                      dataType="i4"
-                      name="idEstadoCivil" />
                     <externalMetadataColumn
                       refId="Package\DimensionesPrincipales\dimEmpleado.Inputs[Entrada de destino de ADO NET].ExternalColumns[idTipoNomina]"
                       dataType="i4"
@@ -6340,17 +6330,15 @@ WHERE  (erpDM.dbo.dimCliente.idCliente IS NULL)</property>
                   description="Especifica la instrucción SQL utilizada por el componente para extraer datos."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT db_erp_sige.empleado.codigo AS idEmpleado, db_erp_sige.cargo.codigo AS idCargoEmpleado, db_erp_sige.estado_civil.codigo AS idEstadoCivil, db_erp_sige.tipo_de_nomina.codigo AS idTipoNomina, 
-                  db_erp_sige.estado_empleado.codigo AS idEstadoEmpleado, db_erp_sige.empleado.nombre, db_erp_sige.empleado.sexo
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT db_erp_sige.empleado.codigo AS idEmpleado, db_erp_sige.cargo.codigo AS idCargoEmpleado, db_erp_sige.tipo_de_nomina.codigo AS idTipoNomina, db_erp_sige.estado_empleado.codigo AS idEstadoEmpleado, 
+                  db_erp_sige.empleado.nombre, db_erp_sige.empleado.sexo
 FROM     db_erp_sige.empleado INNER JOIN
                   db_erp_sige.cargo ON db_erp_sige.empleado.cargo = db_erp_sige.cargo.codigo INNER JOIN
-                  db_erp_sige.estado_civil ON db_erp_sige.empleado.estado_civil = db_erp_sige.estado_civil.codigo INNER JOIN
                   db_erp_sige.estado_empleado ON db_erp_sige.empleado.estado = db_erp_sige.estado_empleado.codigo INNER JOIN
                   db_erp_sige.tipo_de_nomina ON db_erp_sige.empleado.tipo_nomina = db_erp_sige.tipo_de_nomina.codigo LEFT OUTER JOIN
-                  erpDM.dbo.dimEmpleado ON db_erp_sige.cargo.codigo = erpDM.dbo.dimEmpleado.idCargoEmpleado AND db_erp_sige.estado_civil.codigo = erpDM.dbo.dimEmpleado.idEstadoCivil AND 
-                  db_erp_sige.tipo_de_nomina.codigo = erpDM.dbo.dimEmpleado.idTipoNomina AND db_erp_sige.estado_empleado.codigo = erpDM.dbo.dimEmpleado.idEstadoEmpleado
+                  erpDM.dbo.dimEmpleado ON db_erp_sige.cargo.codigo = erpDM.dbo.dimEmpleado.idCargoEmpleado AND db_erp_sige.tipo_de_nomina.codigo = erpDM.dbo.dimEmpleado.idTipoNomina AND 
+                  db_erp_sige.estado_empleado.codigo = erpDM.dbo.dimEmpleado.idEstadoEmpleado
 WHERE  (erpDM.dbo.dimEmpleado.idCargoEmpleado IS NULL) OR
-                  (erpDM.dbo.dimEmpleado.idEstadoCivil IS NULL) OR
                   (erpDM.dbo.dimEmpleado.idTipoNomina IS NULL) OR
                   (erpDM.dbo.dimEmpleado.idEstadoEmpleado IS NULL)</property>
                 <property
@@ -6408,15 +6396,6 @@ WHERE  (erpDM.dbo.dimEmpleado.idCargoEmpleado IS NULL) OR
                       name="idCargoEmpleado"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\DimensionesPrincipales\Leer Empleado.Outputs[Salida de origen de ADO NET].Columns[idEstadoCivil]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DimensionesPrincipales\Leer Empleado.Outputs[Salida de origen de ADO NET].ExternalColumns[idEstadoCivil]"
-                      lineageId="Package\DimensionesPrincipales\Leer Empleado.Outputs[Salida de origen de ADO NET].Columns[idEstadoCivil]"
-                      name="idEstadoCivil"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\DimensionesPrincipales\Leer Empleado.Outputs[Salida de origen de ADO NET].Columns[idTipoNomina]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversión"
@@ -6466,10 +6445,6 @@ WHERE  (erpDM.dbo.dimEmpleado.idCargoEmpleado IS NULL) OR
                       dataType="i4"
                       name="idCargoEmpleado" />
                     <externalMetadataColumn
-                      refId="Package\DimensionesPrincipales\Leer Empleado.Outputs[Salida de origen de ADO NET].ExternalColumns[idEstadoCivil]"
-                      dataType="i4"
-                      name="idEstadoCivil" />
-                    <externalMetadataColumn
                       refId="Package\DimensionesPrincipales\Leer Empleado.Outputs[Salida de origen de ADO NET].ExternalColumns[idTipoNomina]"
                       dataType="i4"
                       name="idTipoNomina" />
@@ -6504,11 +6479,6 @@ WHERE  (erpDM.dbo.dimEmpleado.idCargoEmpleado IS NULL) OR
                       dataType="i4"
                       lineageId="Package\DimensionesPrincipales\Leer Empleado.Outputs[Salida de error de origen de ADO NET].Columns[idCargoEmpleado]"
                       name="idCargoEmpleado" />
-                    <outputColumn
-                      refId="Package\DimensionesPrincipales\Leer Empleado.Outputs[Salida de error de origen de ADO NET].Columns[idEstadoCivil]"
-                      dataType="i4"
-                      lineageId="Package\DimensionesPrincipales\Leer Empleado.Outputs[Salida de error de origen de ADO NET].Columns[idEstadoCivil]"
-                      name="idEstadoCivil" />
                     <outputColumn
                       refId="Package\DimensionesPrincipales\Leer Empleado.Outputs[Salida de error de origen de ADO NET].Columns[idTipoNomina]"
                       dataType="i4"
@@ -9837,6 +9807,12 @@ WHERE  (erpDM.dbo.factVentas.idArticulo IS NULL) OR
                       cachedName="falta"
                       externalMetadataColumnId="Package\factAsistencia\factAsistencia.Inputs[Entrada de destino de ADO NET].ExternalColumns[falta]"
                       lineageId="Package\factAsistencia\Leer Asistencia.Outputs[Salida de origen de ADO NET].Columns[falta]" />
+                    <inputColumn
+                      refId="Package\factAsistencia\factAsistencia.Inputs[Entrada de destino de ADO NET].Columns[multa]"
+                      cachedDataType="r8"
+                      cachedName="multa"
+                      externalMetadataColumnId="Package\factAsistencia\factAsistencia.Inputs[Entrada de destino de ADO NET].ExternalColumns[multa]"
+                      lineageId="Package\factAsistencia\Leer Asistencia.Outputs[Salida de origen de ADO NET].Columns[multa]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -9868,6 +9844,10 @@ WHERE  (erpDM.dbo.factVentas.idArticulo IS NULL) OR
                       refId="Package\factAsistencia\factAsistencia.Inputs[Entrada de destino de ADO NET].ExternalColumns[falta]"
                       dataType="r8"
                       name="falta" />
+                    <externalMetadataColumn
+                      refId="Package\factAsistencia\factAsistencia.Inputs[Entrada de destino de ADO NET].ExternalColumns[multa]"
+                      dataType="r8"
+                      name="multa" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -9910,9 +9890,9 @@ WHERE  (erpDM.dbo.factVentas.idArticulo IS NULL) OR
                   description="Especifica la instrucción SQL utilizada por el componente para extraer datos."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT db_erp_sige.empleado.codigo AS idEmpleado, db_erp_sige.turno.codigo AS idTurno, db_erp_sige.unidad_de_negocio.codigo AS idNegocio, asistencia.fecha, 
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT db_erp_sige.empleado.codigo AS idEmpleado, db_erp_sige.turno.codigo AS idTurno, db_erp_sige.unidad_de_negocio.codigo AS idNegocio, asistencia.fecha,
                   CASE WHEN asistencia.hora_ingreso &gt; turno.hora_inicio THEN DATEDIFF(MINUTE, turno.hora_inicio, asistencia.hora_ingreso) ELSE 0 END AS minutos_retraso, 
-                  CASE WHEN asistencia.hora_salida &lt; turno.hora_final THEN DATEDIFF(MINUTE, asistencia.hora_salida, turno.hora_final) ELSE 0 END AS minutos_salida_antes, 0 AS falta
+                  CASE WHEN asistencia.hora_salida &lt; turno.hora_final THEN DATEDIFF(MINUTE, asistencia.hora_salida, turno.hora_final) ELSE 0 END AS minutos_salida_antes, 0 AS falta, 0 AS multa
 FROM     asistencia INNER JOIN
                   db_erp_sige.empleado ON asistencia.empleado = db_erp_sige.empleado.codigo INNER JOIN
                   db_erp_sige.unidad_de_negocio ON db_erp_sige.empleado.unidad_de_negocio = db_erp_sige.unidad_de_negocio.codigo INNER JOIN
@@ -9925,7 +9905,7 @@ WHERE  (erpDM.dbo.factAsistencia.idEmpleado IS NULL) OR
                   (erpDM.dbo.factAsistencia.idNegocio IS NULL) OR
                   (erpDM.dbo.factAsistencia.fecha IS NULL)
 UNION
-SELECT e.codigo AS idEmpleado, ta.turno AS idTurno, e.unidad_de_negocio AS idNegocio, cl.fecha, 0 AS minutos_retraso, 0 AS minutos_salida_antes, 1 AS falta
+SELECT e.codigo AS idEmpleado, ta.turno AS idTurno, e.unidad_de_negocio AS idNegocio, cl.fecha, 0 AS minutos_retraso, 0 AS minutos_salida_antes, 1 AS falta, (e.sueldo_mensual/20) AS multa
 FROM     calendario_laboral AS cl CROSS JOIN
                   db_erp_sige.empleado AS e INNER JOIN
                   turno_asignacion AS ta ON ta.empleado = e.codigo AND cl.fecha &gt;= ta.fecha_inicio AND cl.fecha &lt;= ta.fecha_fin LEFT OUTER JOIN
@@ -9936,7 +9916,28 @@ FROM     calendario_laboral AS cl CROSS JOIN
 WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND (p.codigo IS NULL) AND (v.codigo IS NULL) AND (factAsistencia_1.idEmpleado IS NULL) AND
                   (factAsistencia_1.idTurno IS NULL) AND
                   (factAsistencia_1.idNegocio IS NULL) AND
-                  (factAsistencia_1.fecha IS NULL)</property>
+                  (factAsistencia_1.fecha IS NULL)
+UNION
+SELECT e.codigo AS idEmpleado, ta.turno AS idTurno, e.unidad_de_negocio AS idNegocio, p.fecha_inicio,  0 AS minutos_retraso, 0 AS minutos_salida_antes, 0 AS falta, 0 as multa
+FROM permiso AS p INNER JOIN 
+             db_erp_sige.empleado AS e ON p.empleado = e.codigo INNER JOIN
+             turno_asignacion AS ta ON ta.empleado = e.codigo LEFT JOIN
+            erpDM.dbo.factAsistencia AS factAsistencia_2 ON e.codigo = factAsistencia_2.idEmpleado AND ta.turno = factAsistencia_2.idTurno AND e.unidad_de_negocio = factAsistencia_2.idNegocio AND p.fecha_inicio = factAsistencia_2.Fecha WHERE 
+ (factAsistencia_2.idEmpleado IS NULL) OR
+                  (factAsistencia_2.idTurno IS NULL) OR
+                  (factAsistencia_2.idNegocio IS NULL) OR
+                  (factAsistencia_2.fecha IS NULL)
+UNION
+SELECT e.codigo AS idEmpleado, ta.turno AS idTurno, e.unidad_de_negocio AS idNegocio, cl.fecha,  0 AS minutos_retraso, 0 AS minutos_salida_antes, 0 AS falta, 0 as multa
+from vacaciones AS v INNER JOIN 
+db_erp_sige.empleado AS e ON e.codigo = v.empleado INNER JOIN 
+ turno_asignacion AS ta ON ta.empleado = e.codigo INNER JOIN
+calendario_laboral AS cl ON cl.fecha &gt;= v.fecha_inicio AND cl.fecha&lt;=v.fecha_fin LEFT JOIN
+            erpDM.dbo.factAsistencia AS factAsistencia_3 ON e.codigo = factAsistencia_3.idEmpleado AND ta.turno = factAsistencia_3.idTurno AND e.unidad_de_negocio = factAsistencia_3.idNegocio AND cl.fecha = factAsistencia_3.Fecha WHERE 
+ (factAsistencia_3.idEmpleado IS NULL) OR
+                  (factAsistencia_3.idTurno IS NULL) OR
+                  (factAsistencia_3.idNegocio IS NULL) OR
+                  (factAsistencia_3.fecha IS NULL)</property>
                 <property
                   dataType="System.Int32"
                   description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
@@ -10036,6 +10037,15 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
                       lineageId="Package\factAsistencia\Leer Asistencia.Outputs[Salida de origen de ADO NET].Columns[falta]"
                       name="falta"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\factAsistencia\Leer Asistencia.Outputs[Salida de origen de ADO NET].Columns[multa]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\factAsistencia\Leer Asistencia.Outputs[Salida de origen de ADO NET].ExternalColumns[multa]"
+                      lineageId="Package\factAsistencia\Leer Asistencia.Outputs[Salida de origen de ADO NET].Columns[multa]"
+                      name="multa"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -10067,6 +10077,10 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
                       refId="Package\factAsistencia\Leer Asistencia.Outputs[Salida de origen de ADO NET].ExternalColumns[falta]"
                       dataType="i4"
                       name="falta" />
+                    <externalMetadataColumn
+                      refId="Package\factAsistencia\Leer Asistencia.Outputs[Salida de origen de ADO NET].ExternalColumns[multa]"
+                      dataType="r8"
+                      name="multa" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -10109,6 +10123,11 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
                       dataType="i4"
                       lineageId="Package\factAsistencia\Leer Asistencia.Outputs[Salida de error de origen de ADO NET].Columns[falta]"
                       name="falta" />
+                    <outputColumn
+                      refId="Package\factAsistencia\Leer Asistencia.Outputs[Salida de error de origen de ADO NET].Columns[multa]"
+                      dataType="r8"
+                      lineageId="Package\factAsistencia\Leer Asistencia.Outputs[Salida de error de origen de ADO NET].Columns[multa]"
+                      name="multa" />
                     <outputColumn
                       refId="Package\factAsistencia\Leer Asistencia.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
                       dataType="i4"
@@ -10435,11 +10454,15 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
     design-time-name="Package\Dimensiones Secundarias">
     <LayoutInfo>
       <GraphLayout
-        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="135.2,41.6"
           Id="Package\Dimensiones Secundarias\Leer Unidad"
           TopLeft="152.999997720122,99.9999985098839" />
+        <NodeLayout
+          Size="160.8,41.6"
+          Id="Package\Dimensiones Secundarias\dimTipoVendedor"
+          TopLeft="1523.14284894722,46.2857137748174" />
         <NodeLayout
           Size="148,41.6"
           Id="Package\Dimensiones Secundarias\dimTipoCliente"
@@ -10449,17 +10472,17 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
           Id="Package\Dimensiones Secundarias\dimEnvase"
           TopLeft="372.857137301139,169.999997466803" />
         <NodeLayout
-          Size="127.2,41.6"
-          Id="Package\Dimensiones Secundarias\Leer Linea"
-          TopLeft="162.999997571111,252.999996230006" />
-        <NodeLayout
           Size="180,41.6"
           Id="Package\Dimensiones Secundarias\Leer CategoriaCliente"
           TopLeft="674.238085191165,196.142854220101" />
         <NodeLayout
-          Size="176,41.6"
-          Id="Package\Dimensiones Secundarias\Leer CanalComercial"
-          TopLeft="1253.77775909503,549.177771775921" />
+          Size="127.2,41.6"
+          Id="Package\Dimensiones Secundarias\Leer Linea"
+          TopLeft="162.999997571111,252.999996230006" />
+        <NodeLayout
+          Size="186.4,41.6"
+          Id="Package\Dimensiones Secundarias\dimTipoUnidadNegocio"
+          TopLeft="1525.59999382099,414.399999562899" />
         <NodeLayout
           Size="150.4,41.6"
           Id="Package\Dimensiones Secundarias\dimTipoArticulo"
@@ -10468,6 +10491,10 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
           Size="167.2,41.6"
           Id="Package\Dimensiones Secundarias\Leer TipoVendedor"
           TopLeft="1245.42855287024,45.685715130823" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Dimensiones Secundarias\Leer TipoContrato"
+          TopLeft="1251.38093373392,184.285711539643" />
         <NodeLayout
           Size="136.8,41.6"
           Id="Package\Dimensiones Secundarias\dimEmpresa"
@@ -10481,13 +10508,9 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
           Id="Package\Dimensiones Secundarias\Leer Categoria"
           TopLeft="153.999997705221,331.199995112419" />
         <NodeLayout
-          Size="186.4,41.6"
-          Id="Package\Dimensiones Secundarias\dimTipoUnidadNegocio"
-          TopLeft="1525.59999382099,414.399999562899" />
-        <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\Dimensiones Secundarias\Leer TipoContrato"
-          TopLeft="1251.38093373392,184.285711539643" />
+          Size="183.2,41.6"
+          Id="Package\Dimensiones Secundarias\Leer TipoIdentificacion"
+          TopLeft="677.974348871754,274.692303599073" />
         <NodeLayout
           Size="163.2,41.6"
           Id="Package\Dimensiones Secundarias\dimTipoProveedor"
@@ -10509,10 +10532,6 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
           Id="Package\Dimensiones Secundarias\Leer TipoCliente"
           TopLeft="675.809513739177,40.9999993890524" />
         <NodeLayout
-          Size="183.2,41.6"
-          Id="Package\Dimensiones Secundarias\Leer TipoIdentificacion"
-          TopLeft="677.974348871754,274.692303599073" />
-        <NodeLayout
           Size="134.4,41.6"
           Id="Package\Dimensiones Secundarias\Leer Estado"
           TopLeft="680.238085101758,116.999998256564" />
@@ -10533,6 +10552,10 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
           Id="Package\Dimensiones Secundarias\dimCategoria"
           TopLeft="373.571423004781,324.999996093767" />
         <NodeLayout
+          Size="165.6,41.6"
+          Id="Package\Dimensiones Secundarias\Leer SubCategoria"
+          TopLeft="141.714283602578,413.199994724989" />
+        <NodeLayout
           Size="170.4,41.6"
           Id="Package\Dimensiones Secundarias\Leer TipoProveedor"
           TopLeft="694.199995782971,451.199997019768" />
@@ -10541,13 +10564,13 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
           Id="Package\Dimensiones Secundarias\Leer TipoArticulo"
           TopLeft="160.999997600913,32.9999995082617" />
         <NodeLayout
-          Size="172,41.6"
-          Id="Package\Dimensiones Secundarias\dimTipoContrato"
-          TopLeft="1527.57142174883,187.714283095939" />
-        <NodeLayout
           Size="136.8,41.6"
           Id="Package\Dimensiones Secundarias\Leer Envase"
           TopLeft="157.999997645617,173.999997407198" />
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\Dimensiones Secundarias\Leer CanalComercial"
+          TopLeft="1253.77775909503,549.177771775921" />
         <NodeLayout
           Size="176,41.6"
           Id="Package\Dimensiones Secundarias\dimTipoIdentificacion"
@@ -10561,10 +10584,6 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
           Id="Package\Dimensiones Secundarias\dimCargo"
           TopLeft="1527.71427828499,118.428569842662" />
         <NodeLayout
-          Size="160.8,41.6"
-          Id="Package\Dimensiones Secundarias\dimTipoVendedor"
-          TopLeft="1523.14284894722,46.2857137748174" />
-        <NodeLayout
           Size="158.4,41.6"
           Id="Package\Dimensiones Secundarias\Leer TipoNomina"
           TopLeft="147.999997794628,658.599991580844" />
@@ -10573,9 +10592,9 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
           Id="Package\Dimensiones Secundarias\dimUnidad"
           TopLeft="377.857137226633,97.8571413989578" />
         <NodeLayout
-          Size="165.6,41.6"
-          Id="Package\Dimensiones Secundarias\Leer SubCategoria"
-          TopLeft="141.714283602578,413.199994724989" />
+          Size="172,41.6"
+          Id="Package\Dimensiones Secundarias\dimTipoContrato"
+          TopLeft="1527.57142174883,187.714283095939" />
         <NodeLayout
           Size="143.2,41.6"
           Id="Package\Dimensiones Secundarias\Leer Empresa"
@@ -10607,7 +10626,9 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10629,7 +10650,9 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10651,7 +10674,9 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10673,7 +10698,9 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10695,7 +10722,9 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10717,7 +10746,9 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10739,7 +10770,9 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10761,7 +10794,9 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10783,7 +10818,9 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10805,7 +10842,9 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10827,7 +10866,9 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10849,7 +10890,9 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10871,7 +10914,9 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10893,7 +10938,9 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10915,7 +10962,9 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10937,7 +10986,9 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10959,7 +11010,9 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10981,7 +11034,9 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11003,7 +11058,9 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -11011,6 +11068,14 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Dimensiones Secundarias\Leer Unidad">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dimensiones Secundarias\dimTipoVendedor">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -11034,14 +11099,6 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Dimensiones Secundarias\Leer Linea">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Dimensiones Secundarias\Leer CategoriaCliente">
     <Properties>
       <Property>
@@ -11050,7 +11107,15 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Dimensiones Secundarias\Leer CanalComercial">
+    design-time-name="Package\Dimensiones Secundarias\Leer Linea">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dimensiones Secundarias\dimTipoUnidadNegocio">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -11067,6 +11132,14 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Dimensiones Secundarias\Leer TipoVendedor">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dimensiones Secundarias\Leer TipoContrato">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -11098,15 +11171,7 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Dimensiones Secundarias\dimTipoUnidadNegocio">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Dimensiones Secundarias\Leer TipoContrato">
+    design-time-name="Package\Dimensiones Secundarias\Leer TipoIdentificacion">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -11154,14 +11219,6 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Dimensiones Secundarias\Leer TipoIdentificacion">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Dimensiones Secundarias\Leer Estado">
     <Properties>
       <Property>
@@ -11202,6 +11259,14 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Dimensiones Secundarias\Leer SubCategoria">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Dimensiones Secundarias\Leer TipoProveedor">
     <Properties>
       <Property>
@@ -11218,7 +11283,7 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Dimensiones Secundarias\dimTipoContrato">
+    design-time-name="Package\Dimensiones Secundarias\Leer Envase">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -11226,7 +11291,7 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Dimensiones Secundarias\Leer Envase">
+    design-time-name="Package\Dimensiones Secundarias\Leer CanalComercial">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -11258,14 +11323,6 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Dimensiones Secundarias\dimTipoVendedor">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Dimensiones Secundarias\Leer TipoNomina">
     <Properties>
       <Property>
@@ -11282,7 +11339,7 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Dimensiones Secundarias\Leer SubCategoria">
+    design-time-name="Package\Dimensiones Secundarias\dimTipoContrato">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -11317,47 +11374,51 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
     design-time-name="Package\DimensionesPrincipales">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="137.6,41.6"
-          Id="Package\DimensionesPrincipales\Leer Usuario"
-          TopLeft="142.999997869134,399.799994412065" />
-        <NodeLayout
-          Size="140,41.6"
-          Id="Package\DimensionesPrincipales\dimVendedor"
-          TopLeft="359.999980330468,144.466665901276" />
-        <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\DimensionesPrincipales\Leer Turno"
-          TopLeft="152.142857466729,472.352940864113" />
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="149.6,41.6"
           Id="Package\DimensionesPrincipales\Leer Proveedor"
           TopLeft="129.428569268815,337.999994963408" />
         <NodeLayout
-          Size="166.4,41.6"
-          Id="Package\DimensionesPrincipales\dimUnidadNegocio"
-          TopLeft="359.642837330649,211.199998770555" />
+          Size="137.6,41.6"
+          Id="Package\DimensionesPrincipales\Leer Usuario"
+          TopLeft="142.999997869134,399.799994412065" />
         <NodeLayout
           Size="143.2,41.6"
           Id="Package\DimensionesPrincipales\dimProveedor"
           TopLeft="365.857137283805,340.399995261431" />
         <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\DimensionesPrincipales\dimUnidadNegocio"
+          TopLeft="359.642837330649,211.199998770555" />
+        <NodeLayout
+          Size="148,41.6"
+          Id="Package\DimensionesPrincipales\Leer Empleado"
+          TopLeft="132.142857424155,542.105881921942" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\DimensionesPrincipales\Leer Turno"
+          TopLeft="152.142857466729,472.352940864113" />
+        <NodeLayout
           Size="130.4,41.6"
           Id="Package\DimensionesPrincipales\dimArticulo"
           TopLeft="359.999980330468,16.2000001265606" />
         <NodeLayout
-          Size="134.4,41.6"
-          Id="Package\DimensionesPrincipales\Leer Cliente"
-          TopLeft="141.904754354165,79.7333327788773" />
+          Size="140,41.6"
+          Id="Package\DimensionesPrincipales\dimVendedor"
+          TopLeft="359.999980330468,144.466665901276" />
         <NodeLayout
-          Size="142.4,41.6"
-          Id="Package\DimensionesPrincipales\Leer Almacen"
-          TopLeft="135.357135056082,273.164704471437" />
+          Size="176,41.6"
+          Id="Package\DimensionesPrincipales\Leer Unidad Negocio"
+          TopLeft="101.547611269197,212.129410298879" />
         <NodeLayout
           Size="147.2,41.6"
           Id="Package\DimensionesPrincipales\Leer Vendedor"
           TopLeft="128.333325753847,142.439214681828" />
+        <NodeLayout
+          Size="142.4,41.6"
+          Id="Package\DimensionesPrincipales\Leer Almacen"
+          TopLeft="135.357135056082,273.164704471437" />
         <NodeLayout
           Size="128,41.6"
           Id="Package\DimensionesPrincipales\dimCliente"
@@ -11371,113 +11432,21 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
           Id="Package\DimensionesPrincipales\dimUsuario"
           TopLeft="367.857137254003,401.999994844198" />
         <NodeLayout
-          Size="176,41.6"
-          Id="Package\DimensionesPrincipales\Leer Unidad Negocio"
-          TopLeft="101.547611269197,212.129410298879" />
-        <NodeLayout
-          Size="148,41.6"
-          Id="Package\DimensionesPrincipales\Leer Empleado"
-          TopLeft="132.142857424155,542.105881921942" />
-        <NodeLayout
           Size="141.6,41.6"
           Id="Package\DimensionesPrincipales\dimEmpleado"
           TopLeft="365.714286492795,546.341176120024" />
         <NodeLayout
-          Size="136.8,41.6"
-          Id="Package\DimensionesPrincipales\Leer Articulo"
-          TopLeft="140.000001092752,16.7999993983905" />
+          Size="134.4,41.6"
+          Id="Package\DimensionesPrincipales\Leer Cliente"
+          TopLeft="141.904754354165,79.7333327788773" />
         <NodeLayout
           Size="136,41.6"
           Id="Package\DimensionesPrincipales\dimAlmacen"
           TopLeft="362.857122909861,272.733331675993" />
-        <EdgeLayout
-          Id="Package\DimensionesPrincipales.Paths[Salida de origen de ADO NET8]"
-          TopLeft="280.142857424155,565.023529020983">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="85.5714290686408,0"
-              Start="0,0"
-              End="78.0714290686408,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="78.0714290686408,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DimensionesPrincipales.Paths[Salida de origen de ADO NET7]"
-          TopLeft="281.742857466729,493.270587917575">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="73.9714291750776,0"
-              Start="0,0"
-              End="66.4714291750776,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="66.4714291750776,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DimensionesPrincipales.Paths[Salida de origen de ADO NET6]"
-          TopLeft="280.599997869134,421.699994628132">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="87.2571393848685,0"
-              Start="0,0"
-              End="79.7571393848685,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="79.7571393848685,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DimensionesPrincipales.Paths[Salida de origen de ADO NET5]"
-          TopLeft="279.028569268815,359.99999511242">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="86.8285680149892,0"
-              Start="0,0"
-              End="79.3285680149892,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="79.3285680149892,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="136.8,41.6"
+          Id="Package\DimensionesPrincipales\Leer Articulo"
+          TopLeft="140.000001092752,16.7999993983905" />
         <EdgeLayout
           Id="Package\DimensionesPrincipales.Paths[Salida de origen de ADO NET4]"
           TopLeft="276.304754354165,101.433634113118">
@@ -11497,7 +11466,9 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11519,7 +11490,9 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11541,7 +11514,9 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11563,7 +11538,9 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11585,36 +11562,110 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimensionesPrincipales.Paths[Salida de origen de ADO NET8]"
+          TopLeft="280.142857424155,565.023529020983">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="85.57142906864,0"
+              Start="0,0"
+              End="78.07142906864,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="78.07142906864,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimensionesPrincipales.Paths[Salida de origen de ADO NET7]"
+          TopLeft="281.742857466729,493.270587917575">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="73.9714291750776,0"
+              Start="0,0"
+              End="66.4714291750776,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="66.4714291750776,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimensionesPrincipales.Paths[Salida de origen de ADO NET6]"
+          TopLeft="280.599997869134,421.699994628132">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="87.2571393848685,0"
+              Start="0,0"
+              End="79.7571393848685,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="79.7571393848685,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimensionesPrincipales.Paths[Salida de origen de ADO NET5]"
+          TopLeft="279.028569268815,359.99999511242">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="86.8285680149892,0"
+              Start="0,0"
+              End="79.3285680149892,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="79.3285680149892,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\DimensionesPrincipales\Leer Usuario">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DimensionesPrincipales\dimVendedor">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DimensionesPrincipales\Leer Turno">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\DimensionesPrincipales\Leer Proveedor">
     <Properties>
@@ -11624,7 +11675,7 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DimensionesPrincipales\dimUnidadNegocio">
+    design-time-name="Package\DimensionesPrincipales\Leer Usuario">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -11640,6 +11691,30 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\DimensionesPrincipales\dimUnidadNegocio">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimensionesPrincipales\Leer Empleado">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimensionesPrincipales\Leer Turno">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\DimensionesPrincipales\dimArticulo">
     <Properties>
       <Property>
@@ -11648,7 +11723,7 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DimensionesPrincipales\Leer Cliente">
+    design-time-name="Package\DimensionesPrincipales\dimVendedor">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -11656,7 +11731,7 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DimensionesPrincipales\Leer Almacen">
+    design-time-name="Package\DimensionesPrincipales\Leer Unidad Negocio">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -11665,6 +11740,14 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\DimensionesPrincipales\Leer Vendedor">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimensionesPrincipales\Leer Almacen">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -11696,22 +11779,6 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DimensionesPrincipales\Leer Unidad Negocio">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DimensionesPrincipales\Leer Empleado">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\DimensionesPrincipales\dimEmpleado">
     <Properties>
       <Property>
@@ -11720,7 +11787,7 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DimensionesPrincipales\Leer Articulo">
+    design-time-name="Package\DimensionesPrincipales\Leer Cliente">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -11729,6 +11796,14 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\DimensionesPrincipales\dimAlmacen">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimensionesPrincipales\Leer Articulo">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -12027,21 +12102,21 @@ WHERE  (cl.es_laborable = 1) AND (cl.es_feriado = 0) AND (a.codigo IS NULL) AND 
         <NodeLayout
           Size="142.4,41.6"
           Id="Package\factAsistencia\factAsistencia"
-          TopLeft="336.42857214474,126.176470477637" />
+          TopLeft="415.714286599232,130.764705767733" />
         <EdgeLayout
           Id="Package\factAsistencia.Paths[Salida de origen de ADO NET]"
-          TopLeft="249.228572170285,146.005882187095">
+          TopLeft="249.228572170285,148.299999832143">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="87.1999999744548,0"
+              EndConnector="166.485714428947,0"
               Start="0,0"
-              End="79.6999999744548,0">
+              End="158.985714428947,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="79.6999999744548,0" />
+                    End="158.985714428947,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

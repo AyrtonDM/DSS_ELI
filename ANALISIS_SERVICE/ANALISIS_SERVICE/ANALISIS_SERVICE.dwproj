@@ -6,12 +6,48 @@
     <Name>ANALISIS_SERVICE.database</Name>
     <FullPath>ANALISIS_SERVICE.database</FullPath>
   </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>ASISTENCIA.cube</Name>
+      <FullPath>ASISTENCIA.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>ASISTENCIA.partitions</Name>
+          <FullPath>ASISTENCIA.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
+  <Dimensions>
+    <ProjectItem>
+      <Name>Dim Unidad Negocio.dim</Name>
+      <FullPath>Dim Unidad Negocio.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Turno.dim</Name>
+      <FullPath>Dim Turno.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Fecha.dim</Name>
+      <FullPath>Dim Fecha.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Empleado.dim</Name>
+      <FullPath>Dim Empleado.dim</FullPath>
+    </ProjectItem>
+  </Dimensions>
   <DataSources>
     <ProjectItem>
       <Name>Erp DM.ds</Name>
       <FullPath>Erp DM.ds</FullPath>
     </ProjectItem>
   </DataSources>
+  <DataSourceViews>
+    <ProjectItem>
+      <Name>ASISTENCIA.dsv</Name>
+      <FullPath>ASISTENCIA.dsv</FullPath>
+    </ProjectItem>
+  </DataSourceViews>
   <Configurations>
     <Configuration>
       <Name>Development</Name>

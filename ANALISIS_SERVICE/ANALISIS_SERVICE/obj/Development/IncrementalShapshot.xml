@@ -19,78 +19,57 @@
     <ObjectSnapshots>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
-        <TimeStamp>0JYF/p3FhHtnkV83wqOlYwBDfdU=18/06/2025 03:27:04 p. m.18/06/2025 03:27:04 p. m.</TimeStamp>
+        <TimeStamp>3gauccvu4Ks3ZJ2kzz4NMqkxYpg=20/06/2025 04:21:38 p. m.20/06/2025 04:21:38 p. m.</TimeStamp>
         <ID>
           <String>Erp DM</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>nO6l1fgoxWjXKUn/4seTzQ1Ox5o=18/06/2025 03:36:46 p. m.18/06/2025 03:30:33 p. m.</TimeStamp>
+        <TimeStamp>kgRgqblZBl2Vpy1lzqMCU+GIE2M=20/06/2025 07:27:40 p. m.20/06/2025 04:28:17 p. m.</TimeStamp>
         <ID>
-          <String>CAJA_CHICA</String>
-        </ID>
-      </ObjectSnapshot>
-      <ObjectSnapshot>
-        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>m/U/uzdb70T9/ISlOGvuDC7x4+M=18/06/2025 04:07:34 p. m.18/06/2025 03:49:37 p. m.</TimeStamp>
-        <ID>
-          <String>INVENTARIO</String>
+          <String>ASISTENCIA</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>+QpiYjdwcw2uqG0uWZCENz+R88g=18/06/2025 03:44:44 p. m.18/06/2025 03:36:46 p. m.</TimeStamp>
+        <TimeStamp>GSBIFHrKQkimwLowbUCG1q77wOE=20/06/2025 04:14:55 p. m.20/06/2025 04:13:55 p. m.</TimeStamp>
+        <ID>
+          <String>Dim Unidad Negocio</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>65NtQMS8n9cgG1OiLrRTnGcVgOk=20/06/2025 04:15:06 p. m.20/06/2025 04:13:55 p. m.</TimeStamp>
         <ID>
           <String>Dim Turno</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>pqxYfodS/yJUMU53FyJePSSEHQI=18/06/2025 03:44:44 p. m.18/06/2025 03:36:46 p. m.</TimeStamp>
+        <TimeStamp>e6bA7hArX3uYrShhO1he+MChjJ0=20/06/2025 04:16:07 p. m.20/06/2025 04:13:55 p. m.</TimeStamp>
         <ID>
           <String>Dim Fecha</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>KO51nm/kPIVSiZEJLB0pH82aW30=18/06/2025 03:55:19 p. m.18/06/2025 03:51:07 p. m.</TimeStamp>
+        <TimeStamp>pXkOb90ogo3loQKwlMdRexW0jw4=20/06/2025 04:17:32 p. m.20/06/2025 04:13:55 p. m.</TimeStamp>
         <ID>
-          <String>Dim Articulo</String>
-        </ID>
-      </ObjectSnapshot>
-      <ObjectSnapshot>
-        <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>u8EO+eMvji4hfVy4yLrQnF4s0RA=18/06/2025 03:51:07 p. m.18/06/2025 03:51:07 p. m.</TimeStamp>
-        <ID>
-          <String>Dim Fecha 1</String>
-        </ID>
-      </ObjectSnapshot>
-      <ObjectSnapshot>
-        <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>hgRxbtahjg0VZ5xudpfUg1vvJjg=18/06/2025 03:51:07 p. m.18/06/2025 03:51:07 p. m.</TimeStamp>
-        <ID>
-          <String>Dim Almacen</String>
+          <String>Dim Empleado</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>IA34t4g9nULbQtgFHt7xtK9EoAg=18/06/2025 03:44:44 p. m.18/06/2025 03:36:46 p. m.iHsHhCGcfbSxFGsISTM5elrdSZE=18/06/2025 03:36:46 p. m.18/06/2025 03:36:46 p. m.</TimeStamp>
+        <TimeStamp>lftklno/M94XOMU9ChbTaEvJNrE=20/06/2025 07:31:42 p. m.20/06/2025 04:28:26 p. m.Y1DyYXS/3X499p1QnerZ7Z1xUUI=20/06/2025 04:28:26 p. m.20/06/2025 04:28:26 p. m.</TimeStamp>
         <ID>
-          <String>CAJA_CHICA</String>
-        </ID>
-      </ObjectSnapshot>
-      <ObjectSnapshot>
-        <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>BYnj/b0tGlDz6mXw8CmXdJTIHKE=18/06/2025 04:11:09 p. m.18/06/2025 03:51:07 p. m.H8ERvro+qU3fXnlZkIfQs0L+TBM=18/06/2025 03:51:07 p. m.18/06/2025 03:51:07 p. m.</TimeStamp>
-        <ID>
-          <String>INVENTARIO</String>
+          <String>ASISTENCIA</String>
         </ID>
       </ObjectSnapshot>
     </ObjectSnapshots>
     <DatabaseSnapshot>
       <Type>Microsoft.AnalysisServices.Database</Type>
-      <TimeStamp>gfff3BpXovN0AgQR8WsVfH0V2rQ=18/06/2025 03:24:00 p. m.18/06/2025 03:23:59 p. m.</TimeStamp>
+      <TimeStamp>gfff3BpXovN0AgQR8WsVfH0V2rQ=20/06/2025 02:10:58 p. m.20/06/2025 02:10:58 p. m.</TimeStamp>
       <ID>
         <String>ANALISIS_SERVICE</String>
       </ID>
@@ -99,5 +78,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2025-06-18T20:11:21.373333Z</LastDeployed>
+  <LastDeployed>2025-06-20T23:37:18.413333Z</LastDeployed>
 </DeploymentSnapshot>

@@ -1,0 +1,64 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Ayrton\\Universidad\\Eli\u0027s carpet\\DSS_ELI\\ANALISIS_SERVICE\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{35F3BF0C-6E24-7832-830E-F3125AB4BA89}|ANALISIS_SERVICE\\ANALISIS_SERVICE.dwproj|D:\\Ayrton\\Universidad\\Eli\u0027s carpet\\DSS_ELI\\ANALISIS_SERVICE\\ANALISIS_SERVICE\\ASISTENCIA.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{35F3BF0C-6E24-7832-830E-F3125AB4BA89}|ANALISIS_SERVICE\\ANALISIS_SERVICE.dwproj|solutionrelative:ANALISIS_SERVICE\\ASISTENCIA.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35F3BF0C-6E24-7832-830E-F3125AB4BA89}|ANALISIS_SERVICE\\ANALISIS_SERVICE.dwproj|D:\\Ayrton\\Universidad\\Eli\u0027s carpet\\DSS_ELI\\ANALISIS_SERVICE\\ANALISIS_SERVICE\\ASISTENCIA.dsv||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{35F3BF0C-6E24-7832-830E-F3125AB4BA89}|ANALISIS_SERVICE\\ANALISIS_SERVICE.dwproj|solutionrelative:ANALISIS_SERVICE\\ASISTENCIA.dsv||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ASISTENCIA.dsv [Dise\u00F1o]",
+              "DocumentMoniker": "D:\\Ayrton\\Universidad\\Eli\u0027s carpet\\DSS_ELI\\ANALISIS_SERVICE\\ANALISIS_SERVICE\\ASISTENCIA.dsv",
+              "RelativeDocumentMoniker": "ANALISIS_SERVICE\\ASISTENCIA.dsv",
+              "ToolTip": "D:\\Ayrton\\Universidad\\Eli\u0027s carpet\\DSS_ELI\\ANALISIS_SERVICE\\ANALISIS_SERVICE\\ASISTENCIA.dsv [Dise\u00F1o]",
+              "RelativeToolTip": "ANALISIS_SERVICE\\ASISTENCIA.dsv [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-20T23:13:00.788Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ASISTENCIA.cube [Dise\u00F1o]",
+              "DocumentMoniker": "D:\\Ayrton\\Universidad\\Eli\u0027s carpet\\DSS_ELI\\ANALISIS_SERVICE\\ANALISIS_SERVICE\\ASISTENCIA.cube",
+              "RelativeDocumentMoniker": "ANALISIS_SERVICE\\ASISTENCIA.cube",
+              "ToolTip": "D:\\Ayrton\\Universidad\\Eli\u0027s carpet\\DSS_ELI\\ANALISIS_SERVICE\\ANALISIS_SERVICE\\ASISTENCIA.cube [Dise\u00F1o]",
+              "RelativeToolTip": "ANALISIS_SERVICE\\ASISTENCIA.cube [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-06-20T21:26:03.344Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
